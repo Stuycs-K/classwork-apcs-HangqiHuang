@@ -21,6 +21,13 @@ public class MyArrays{
     System.out.println(returnCopyWorks && (oldAry != copyAry));
   }
 
+  public static int[] returnCopy(int[] ary){
+    int[] copyAry = new int[ary.length];
+    for(int i = 0; i < ary.length; i++){
+      copyAry[i] = ary[i];
+    }
+    return copyAry;
+  }
   public static String arrayToString(int[] nums){
     String result = "[";
     if (nums.length != 0){
