@@ -1,15 +1,24 @@
 public class MyArrays{
   public static void main(String[] args){
-    System.out.println("Testing returnCopy: ");
-    int[] originalAry = new int[] {1, 5, 54, 2, 5, 778, 0};
-    int [] newAry = returnCopy(originalAry);
+    System.out.println("Testing returnCopy: ");//a header
+    int[] originalAry = new int[] {1, 5, 54, 2, 5, 778, 0};//first array
+    int [] newAry = returnCopy(originalAry);//after running copy
     boolean returnCopyWorks true;
     for (int i = 0; i < originalAry; i++){
       if(originalAry[i] != newAry[i]){
-        return returnCopyWorks;
+        returnCopyWorks = false;//check if ary is identical
       }
     }
-    System.out.println(returnCopyWorks && (originalAry != newAry));
+    System.out.println(returnCopyWorks && (originalAry != newAry));//if identical and not same ary
+    int[] oldAry = new int[] {11111, 9494, 2, 444, 8473, 0};//second ary
+    int[] copyAry = returnCopy(oldAry);
+    returnCopyWorks = true;
+    for(int i = 0; i < oldAry; i++){
+      if(oldAry[i] != copyAry[i]){
+        returnCopyWorks = false;
+      }
+    }
+    System.out.println(returnCopyWorks && (oldAry != copyAry));
   }
 
   public static String arrayToString(int[] nums){
