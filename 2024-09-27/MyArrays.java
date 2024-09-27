@@ -3,8 +3,8 @@ public class MyArrays{
     System.out.println("Testing returnCopy: ");//a header
     int[] originalAry = new int[] {1, 5, 54, 2, 5, 778, 0};//first array
     int [] newAry = returnCopy(originalAry);//after running copy
-    boolean returnCopyWorks true;
-    for (int i = 0; i < originalAry; i++){
+    boolean returnCopyWorks = true;
+    for (int i = 0; i < originalAry.length; i++){
       if(originalAry[i] != newAry[i]){
         returnCopyWorks = false;//check if ary is identical
       }
@@ -13,7 +13,7 @@ public class MyArrays{
     int[] oldAry = new int[] {11111, 9494, 2, 444, 8473, 0};//second ary
     int[] copyAry = returnCopy(oldAry);
     returnCopyWorks = true;
-    for(int i = 0; i < oldAry; i++){
+    for(int i = 0; i < oldAry.length; i++){
       if(oldAry[i] != copyAry[i]){
         returnCopyWorks = false;
       }
