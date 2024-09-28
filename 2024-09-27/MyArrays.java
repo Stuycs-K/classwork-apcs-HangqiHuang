@@ -28,6 +28,20 @@ public class MyArrays{
     }
     return copyAry;
   }
+
+  public static int[] concatArray(int[] ary1, int[] ary2){
+    int[] result = new int[ary1.length + ary2.length];
+    int counter = 0;
+    for (int i = 0; i < ary1.length; i++){
+      result[counter] = ary1[i];
+      counter++;
+    }
+    for (int i = 0; i < ary2.length; i++){
+      result[counter] = ary2[i];
+      counter++;
+    }
+    return result;
+  }
   public static String arrayToString(int[] nums){
     String result = "[";
     if (nums.length != 0){
