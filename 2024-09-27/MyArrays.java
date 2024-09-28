@@ -19,6 +19,17 @@ public class MyArrays{
       }
     }
     System.out.println(returnCopyWorks && (oldAry != copyAry));
+
+    System.out.println("Testing concactArray");
+    int[] ary1 = {1, 2, 3, 4, 5};
+    int[] ary2 = {6, 7, 8, 9, 10};
+    int[] ary3 = {0, 0, 0, 0};
+    System.out.println(arrayToString(ary1));
+    System.out.println(arrayToString(ary2));
+    System.out.println(arrayToString(concatArray(ary1, ary2)));
+    System.out.println(arrayToString(ary3));
+    System.out.println(arrayToString(ary1));
+    System.out.println(arrayToString(concatArray(ary3, ary1)));
   }
 
   public static int[] returnCopy(int[] ary){
@@ -42,6 +53,7 @@ public class MyArrays{
     }
     return result;
   }
+
   public static String arrayToString(int[] nums){
     String result = "[";
     if (nums.length != 0){
