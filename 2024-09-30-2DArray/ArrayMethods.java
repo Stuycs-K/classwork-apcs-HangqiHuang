@@ -59,6 +59,6 @@ public static int arr2DSum(int[][] nums){
             }
         }
     }
-    return sum;
+    return sum
 }
 }
