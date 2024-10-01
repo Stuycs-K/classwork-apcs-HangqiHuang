@@ -1,10 +1,18 @@
 //Hangqi, hangqih@nycstudents.net; Veronika, vgulko60@stuy.edu
 public class ArrayMethods{
     public static void main(String[] args){
-      int[] Array1D = new int[] {1, 2, 3, 4, 5};
-      System.out.println(aryToString(Array1D));
-      int[][] Array2D = new int[][] {{1,2,3}, {4,5,6}, {7,8,9}};
-      System.out.println(aryToString(Array2D));
+      int[] firstArray1D = new int[] {1, 2, 3, 4, 5};
+      int[] secondArray1D = new int [] {};
+      System.out.println(aryToString(firstArray1D));
+      System.out.println(aryToString(secondArray1D));
+      int[][] squareArray2D = new int[][] {{1,2,3}, {4,5,6}, {7,8,9}};
+      int[][] emptyArray2D = new int[3][];
+      int[][] rectangularArray2D = new int[3][4];
+      int[][] raggedArray2D = {{1}, {1, 2}, {1, 2, 3}};
+      System.out.println(aryToString(squareArray2D));
+      System.out.println(aryToString(emptyArray2D));
+      System.out.println(aryToString(rectangularArray2D));
+      System.out.println(aryToString(raggedArray2D));
     }
   
     public static String aryToString(int[] nums){
