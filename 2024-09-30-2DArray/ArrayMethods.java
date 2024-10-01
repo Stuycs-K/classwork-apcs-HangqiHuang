@@ -65,4 +65,18 @@ public static int arr2DSum(int[][] nums){
     }
     return sum;
 }
+
+public static int[][] swapRC(int[][] nums){
+    int row = nums.length;//# of rows in nums
+    int column = nums[0].length;//# of columns in nums
+    int[][] result = new int[column][row];
+    int counter = 0;
+    for (int i = 0; i < column; i++){
+        counter = 0;
+        while(counter < row){
+            result[i][counter] = nums[counter][i];
+        }
+    }
+    return result;
+}
 }
