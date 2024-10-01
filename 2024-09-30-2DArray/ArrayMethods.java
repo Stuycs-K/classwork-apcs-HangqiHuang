@@ -29,12 +29,16 @@ public class ArrayMethods{
 
     //using helper func
     public static String aryToString(int[][] nums){
-      String result = "{";
-      for(int i = 0; i < nums.length; i++){
-        result += aryToString(nums[i]) + ", ";
-      }
-      result = result.substring(0,result.length() - 2);
-      result += "}";
-      return(result);
-    }
-  }
+        String result = "{";
+        for(int i = 0; i < nums.length; i++){
+            if (nums[i] != null){
+                result += aryToString(nums[i]) + ", ";
+            }
+        }
+        if(!(result.equals("{"))){
+            result = result.substring(0,result.length() - 2);
+        }
+        result += "}";
+        return result;
+}
+}
