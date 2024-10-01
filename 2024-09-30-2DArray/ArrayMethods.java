@@ -9,7 +9,7 @@ public class ArrayMethods{
       int[][] squareArray2D = new int[][] {{1,2,3}, {4,5,6}, {7,8,9}};
       int[][] emptyArray2D = new int[3][];//because I haven't preset the column, the array holds null
       int[][] rectangularArray2D = new int[3][4];
-      int[][] raggedArray2D = {{1}, {1, 2}, {1, 2, 3}};
+      int[][] raggedArray2D = {{}, {1}, {1, 2}, {1, 2, 3}};
       System.out.println("Testing 2D aryToString");
       System.out.println(aryToString(squareArray2D));
       System.out.println(aryToString(emptyArray2D));
@@ -42,7 +42,9 @@ public class ArrayMethods{
       int[][] copy3 = copy(rectangularArray2D);
       int[][] copy4 = copy(raggedArray2D);
       System.out.println(checkCopy(squareArray2D, copy1) && sqaureArray2D != copy1);
-      System.out.println
+      System.out.println(checkCopy(emptyArray2D, copy2) && emptyArray2D != copy2);
+      System.out.println(checkCopy(rectangularArray2D, copy3) && rectangularArray2D != copy3);
+      System.out.println(checkCopy(raggedArray2D, copy 4) && raggedArray2D != copy4);
     }
   
     public static String aryToString(int[] nums){
