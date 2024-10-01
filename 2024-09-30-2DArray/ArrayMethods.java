@@ -35,6 +35,9 @@ public class ArrayMethods{
       int[][] negativeAry2 = {{-1, -2, -3}, {1, -5, -99}, {-1, 4}};
       replaceNegative(negativeAry2);
       System.out.println("Should print {{1, 0, 0}, {1, 1, 0}, {0, 4}} vs tested: " + aryToString(negativeAry2));
+
+      System.out.println("Testing copy");
+
     }
   
     public static String aryToString(int[] nums){
@@ -49,7 +52,7 @@ public class ArrayMethods{
         return result;
     }
 
-    //using helper func
+    //using aryToString1D
     public static String aryToString(int[][] nums){
         String result = "{";
         for(int i = 0; i < nums.length; i++){
@@ -105,4 +108,24 @@ public static void replaceNegative(int[][] vals){
     }
 }
 
+public static boolean checkCopy(int[][] a, int[][] b){
+    if(a.length != b.length){
+        return false;
+    }
+    else{
+        for(int i = 0; i < a.length; i++){
+            if(a[i].length != b[i].length){
+                return false;
+            }
+        }
+    }
+    for(int i = 0; i < a.length; i++){
+        for(int j = 0; j < a[i].length; j++){
+            if(a[i][j] != b[i][j]){
+                return false;
+            }
+        }
+    }
+    return true;
+}
 }
