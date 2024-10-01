@@ -16,13 +16,16 @@ public class ArrayMethods{
     }
   
     public static String aryToString(int[] nums){
-      String result = "{";
-      for (int i = 0; i < nums.length - 1; i++) {
-          result += nums[i] + ", ";
-      }
-      result += nums[nums.length - 1] + "}";
-      return result;
-      }
+        String result = "{";
+        if (nums.length != 0){
+            for (int i = 0; i < nums.length; i++){
+                result += nums[i] + ", ";
+            }
+            result = result.substring(0, result.length() - 2);
+        } 
+        result += "}";
+        return result;
+    }
       //using helper func
     public static String aryToString(int[][] nums){
       String result = "{";
