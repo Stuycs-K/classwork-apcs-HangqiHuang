@@ -32,6 +32,9 @@ public class ArrayMethods{
       int[][] negativeAry1 = {{-1, 1}, {1, -1}};
       replaceNegative(negativeAry1);
       System.out.println("Should print {{1, 1}, {1, 1}} vs tested: " + aryToString(negativeAry1));
+      int[][] negativeAry2 = {{-1, -2, -3}, {1, -5, -99}, {-1, 4}};
+      replaceNegative(negativeAry2);
+      System.out.println("Should print {{1, 0, 0}, {1, 1, 0}, {0, 4}} vs tested: " + aryToString(negativeAry2));
     }
   
     public static String aryToString(int[] nums){
