@@ -80,4 +80,20 @@ public static int[][] swapRC(int[][] nums){
     }
     return result;
 }
+
+public static void replaceNegative(int[][] vals){
+    for(int i = 0; i < vals.length; i++){
+        for(int j = 0; j < vals[j].length; j++){
+            if(vals[i][j] < 0){
+                if(i == j){
+                    vals[i][j] = 1;
+                }
+                else{
+                    vals[i][j] = 0;
+                }
+            }
+        }
+    }
+}
+
 }
