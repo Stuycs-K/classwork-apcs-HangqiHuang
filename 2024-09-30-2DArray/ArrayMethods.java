@@ -22,10 +22,16 @@ public class ArrayMethods{
       System.out.println("Expected 10 vs tested: " + arr2DSum(raggedArray2D));
       rectangularArray2D[1] = new int[] {1, 2, 3, 4};
       System.out.println("Expected 10 vs tested: " + arr2DSum(rectangularArray2D));
+      System.out.println("Testing swap");
       int[][] swapAry1 = {{1, 2}, {3, 4}, {5, 6}};
       int[][] swapAry2 = {{1, 2, 3}, {4, 5, 6}};
-      System.out.println("Expected {{1, 3, 5}, {2, 4, 6}} + vs tested: " + aryToString(swapRC(swapAry1)));
+      System.out.println("Expected {{1, 3, 5}, {2, 4, 6}} vs tested: " + aryToString(swapRC(swapAry1)));
       System.out.println("Expected {{1, 4}, {2, 5}, {3, 6}} vs tested: " + aryToString(swapRC(swapAry2)));
+
+      System.out.println("Testing negative");
+      int[][] negativeAry1 = {{-1, 1}, {1, -1}};
+      replaceNegative(negativeAry1);
+      System.out.println("Should print {{1, 1}, {1, 1}} vs tested: " + aryToString(negativeAry1));
     }
   
     public static String aryToString(int[] nums){
@@ -83,7 +89,7 @@ public static int[][] swapRC(int[][] nums){
 
 public static void replaceNegative(int[][] vals){
     for(int i = 0; i < vals.length; i++){
-        for(int j = 0; j < vals[j].length; j++){
+        for(int j = 0; j < vals[i].length; j++){
             if(vals[i][j] < 0){
                 if(i == j){
                     vals[i][j] = 1;
