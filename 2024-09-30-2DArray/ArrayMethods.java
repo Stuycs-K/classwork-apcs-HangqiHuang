@@ -22,6 +22,10 @@ public class ArrayMethods{
       System.out.println("Expected 10 vs tested: " + arr2DSum(raggedArray2D));
       rectangularArray2D[1] = new int[] {1, 2, 3, 4};
       System.out.println("Expected 10 vs tested: " + arr2DSum(rectangularArray2D));
+      int[][] swapAry1 = {{1, 2}, {3, 4}, {5, 6}};
+      int[][] swapAry2 = {{1, 2, 3}, {4, 5, 6}};
+      System.out.println("Expected " + arrToString(swapAry2) + " vs tested: " + swapRC(swapAry1));
+      System.out.println("Expected " + arrToString(swapAry2) + " vs tested: " + swapRC(swapAry2));
     }
   
     public static String aryToString(int[] nums){
@@ -59,6 +63,6 @@ public static int arr2DSum(int[][] nums){
             }
         }
     }
-    return sum
+    return sum;
 }
 }
