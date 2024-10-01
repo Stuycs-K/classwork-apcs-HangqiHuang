@@ -108,6 +108,19 @@ public static void replaceNegative(int[][] vals){
     }
 }
 
+public static int[][] copy(int[][] nums){
+    int row = nums.length;//how many rows
+    int[][] result = new int[row][];
+    for (int i = 0; i < nums.length; i++){
+        int column = nums[i].length;
+        result[i] = new int[column];
+        for(int j = 0; j < nums[i].length; j++){
+            result[i][j] = nums[i][j];
+        }
+    }
+    return result;
+}
+
 public static boolean checkCopy(int[][] a, int[][] b){
     if(a.length != b.length){
         return false;
