@@ -51,6 +51,14 @@ public class ArrayMethods{
         return result;
 }
 public static int arr2DSum(int[][] nums){
-    return 0;
+    int sum = 0;
+    for (int i = 0; i < nums.length; i++){
+        if (nums[i] != null){
+            for (int x = 0; x < nums[i].length; x++){
+                sum += nums[i][x];
+            }
+        }
+    }
+    return sum;
 }
 }
