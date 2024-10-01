@@ -37,7 +37,12 @@ public class ArrayMethods{
       System.out.println("Should print {{1, 0, 0}, {1, 1, 0}, {0, 4}} vs tested: " + aryToString(negativeAry2));
 
       System.out.println("Testing copy");
-
+      int[][] copy1 = copy(squareArray2D);
+      int[][] copy2 = copy(emptyArray2D);
+      int[][] copy3 = copy(rectangularArray2D);
+      int[][] copy4 = copy(raggedArray2D);
+      System.out.println(checkCopy(squareArray2D, copy1) && sqaureArray2D != copy1);
+      System.out.println
     }
   
     public static String aryToString(int[] nums){
@@ -121,23 +126,27 @@ public static int[][] copy(int[][] nums){
     return result;
 }
 
-public static boolean checkCopy(int[][] a, int[][] b){
-    if(a.length != b.length){
+public static boolean checkCopy(int[][] original, int[][] copy){
+    if(original.length != copy.length){
         return false;
     }
     else{
-        for(int i = 0; i < a.length; i++){
-            if(a[i].length != b[i].length){
+        for(int i = 0; i < original.length; i++){
+            if(original[i].length != copy[i].length){
                 return false;
             }
         }
     }
-    for(int i = 0; i < a.length; i++){
-        for(int j = 0; j < a[i].length; j++){
-            if(a[i][j] != b[i][j]){
+    for(int i = 0; i < original.length; i++){
+        for(int j = 0; j < original[i].length; j++){
+            if(original[i][j] != copy[i][j]){
                 return false;
             }
         }
+    }
+    if(copy.length != 0){
+        copy[0][0] = 999;
+        return original[0][0] != 999;
     }
     return true;
 }
