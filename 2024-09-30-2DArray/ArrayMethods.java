@@ -138,21 +138,27 @@ public class ArrayMethods{
             if((original[i] == null && copyVer[i] != null) || (copyVer[i] == null && copyVer[i] != null)){//check if null
                 return false;
             }
-            if(original[i].length != copyVer[i].length){//check length
-                return false;
-            }
-        }
-        for(int i = 0; i < original.length; i++){//check individual entity
-            for(int j = 0; j < original[i].length; j++){
-                if(original[i][j] != original[i][j]){
+            if(original[i] != null){
+                if(original[i].length != copyVer[i].length){//check length
                     return false;
                 }
             }
         }
+        for(int i = 0; i < original.length; i++){//check individual entity
+            if(original[i] != null){
+                for(int j = 0; j < original[i].length; j++){
+                    if(original[i][j] != original[i][j]){
+                        return false;
+                    }
+                }
+            }
+        }
         boolean change = true;
-        if(copyVer[0] != null){
-            copyVer[0][0] = 999;
-            change = original[0][0] != 999;
+        for(int i = 0; i < copyVer.length; i++){
+            if(copyVer[i] != null && copyVer[i].length != 0){
+                copyVer[i][0] = 999;
+                change = original[i][0] != 999;
+            }
         }
         return change;
     }
