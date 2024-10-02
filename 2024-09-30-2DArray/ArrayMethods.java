@@ -41,10 +41,10 @@ public class ArrayMethods{
       int[][] copy2 = copy(emptyArray2D);
       int[][] copy3 = copy(rectangularArray2D);
       int[][] copy4 = copy(raggedArray2D);
-      System.out.println(checkCopy(squareArray2D, copy1) && sqaureArray2D != copy1);
+      System.out.println(checkCopy(squareArray2D, copy1) && squareArray2D != copy1);
       System.out.println(checkCopy(emptyArray2D, copy2) && emptyArray2D != copy2);
       System.out.println(checkCopy(rectangularArray2D, copy3) && rectangularArray2D != copy3);
-      System.out.println(checkCopy(raggedArray2D, copy 4) && raggedArray2D != copy4);
+      System.out.println(checkCopy(raggedArray2D, copy4) && raggedArray2D != copy4);
     }
   
     public static String aryToString(int[] nums){
@@ -73,83 +73,87 @@ public class ArrayMethods{
         result += "}";
         return result;
 }
-public static int arr2DSum(int[][] nums){
-    int sum = 0;
-    for (int i = 0; i < nums.length; i++){
-        if (nums[i] != null){
-            for (int x = 0; x < nums[i].length; x++){
-                sum += nums[i][x];
-            }
-        }
-    }
-    return sum;
-}
-
-public static int[][] swapRC(int[][] nums){
-    int row = nums.length;//# of rows in nums
-    int column = nums[0].length;//# of columns in nums
-    int[][] result = new int[column][row];
-    int counter = 0;
-    for (int i = 0; i < column; i++){
-        counter = 0;
-        while(counter < row){
-            result[i][counter] = nums[counter][i];
-            counter++;
-        }
-    }
-    return result;
-}
-
-public static void replaceNegative(int[][] vals){
-    for(int i = 0; i < vals.length; i++){
-        for(int j = 0; j < vals[i].length; j++){
-            if(vals[i][j] < 0){
-                if(i == j){
-                    vals[i][j] = 1;
-                }
-                else{
-                    vals[i][j] = 0;
+    public static int arr2DSum(int[][] nums){
+        int sum = 0;
+        for (int i = 0; i < nums.length; i++){
+            if (nums[i] != null){
+                for (int x = 0; x < nums[i].length; x++){
+                    sum += nums[i][x];
                 }
             }
         }
+        return sum;
     }
-}
 
-public static int[][] copy(int[][] nums){
-    int row = nums.length;//how many rows
-    int[][] result = new int[row][];
-    for (int i = 0; i < nums.length; i++){
-        int column = nums[i].length;
-        result[i] = new int[column];
-        for(int j = 0; j < nums[i].length; j++){
-            result[i][j] = nums[i][j];
+    public static int[][] swapRC(int[][] nums){
+        int row = nums.length;//# of rows in nums
+        int column = nums[0].length;//# of columns in nums
+        int[][] result = new int[column][row];
+        int counter = 0;
+        for (int i = 0; i < column; i++){
+            counter = 0;
+            while(counter < row){
+                result[i][counter] = nums[counter][i];
+                counter++;
+            }
         }
+        return result;
     }
-    return result;
-}
 
-public static boolean checkCopy(int[][] original, int[][] copy){
-    if(original.length != copy.length){
-        return false;
-    }
-    else{
-        for(int i = 0; i < original.length; i++){
-            if(original[i].length != copy[i].length){
-                return false;
+    public static void replaceNegative(int[][] vals){
+        for(int i = 0; i < vals.length; i++){
+            for(int j = 0; j < vals[i].length; j++){
+                if(vals[i][j] < 0){
+                    if(i == j){
+                        vals[i][j] = 1;
+                    }
+                    else{
+                        vals[i][j] = 0;
+                    }
+                }
             }
         }
     }
-    for(int i = 0; i < original.length; i++){
-        for(int j = 0; j < original[i].length; j++){
-            if(original[i][j] != copy[i][j]){
+
+    public static int[][] copy(int[][] nums){
+        int row = nums.length;//how many rows
+        int[][] result = new int[row][];
+        for (int i = 0; i < nums.length; i++){
+            if(nums[i] != null){
+                int column = nums[i].length;
+                result[i] = new int[column];
+                for(int j = 0; j < nums[i].length; j++){
+                    result[i][j] = nums[i][j];
+                }
+            }
+        }
+        return result;
+    }
+
+    public static boolean checkCopy(int[][] original, int[][] copyVer){
+        if(original.length != copyVer.length){//check length of array
+            return false;
+        }
+        for(int i = 0; i < original.length; i++){//check length of array of array
+            if((original[i] == null && copyVer[i] != null) || (copyVer[i] == null && copyVer[i] != null)){//check if null
+                return false;
+            }
+            if(original[i].length != copyVer[i].length){//check length
                 return false;
             }
         }
+        for(int i = 0; i < original.length; i++){//check individual entity
+            for(int j = 0; j < original[i].length; j++){
+                if(original[i][j] != original[i][j]){
+                    return false;
+                }
+            }
+        }
+        boolean change = true;
+        if(copyVer[0] != null){
+            copyVer[0][0] = 999;
+            change = original[0][0] != 999;
+        }
+        return change;
     }
-    if(copy.length != 0){
-        copy[0][0] = 999;
-        return original[0][0] != 999;
-    }
-    return true;
-}
 }
