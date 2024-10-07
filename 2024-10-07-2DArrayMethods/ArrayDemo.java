@@ -5,6 +5,7 @@ public class ArrayDemo{
     System.out.println(arrToString(array1));
     System.out.println(Arrays.toString(array1));
     System.out.println("Testing arrToString with Array.toString: " + arrToString(array1).equals(Arrays.toString(array1)));
+    System.out.println("Testing 2DarrToStrign with Array.toString: " + arrToString(array1).equals(Arrays.toString(array1)));
     //write your tests here!
     //You can now use Arrays.toString(yourArray) instead of writing arrayToString again.
     //Compare Arrays.toString(yourArray) to YOUR arrayToString() method to make sure yours is correct
@@ -29,16 +30,16 @@ public class ArrayDemo{
   //as long as the parameters are different! (type and/or quantity must be different)
   //Pro tip: you should be using your 1D arrToString in this method!
   public static String arrToString(int[][]ary){
-    String result = "{";
+    String result = "[";
     for(int i = 0; i < ary.length; i++){
         if (ary[i] != null){
-            result += aryToString(ary[i]) + ", ";
+            result += arrToString(ary[i]) + ", ";
         }
     }
-    if(!(result.equals("{"))){
+    if(!(result.equals("["))){
         result = result.substring(0,result.length() - 2);
     }
-    result += "}";
+    result += "]";
     return result;
   }
 
