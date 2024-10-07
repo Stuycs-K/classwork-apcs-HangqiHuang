@@ -2,6 +2,8 @@ import java.util.Arrays;
 public class ArrayDemo{
   public static void main(String[]args){
     int[] array1 = {1, 2, 3, 4, 5};
+    System.out.println(arrToString(array1));
+    System.out.println(Arrays.toString(array1));
     System.out.println("Testing arrToString with Array.toString: " + arrToString(array1).equals(Arrays.toString(array1)));
     //write your tests here!
     //You can now use Arrays.toString(yourArray) instead of writing arrayToString again.
@@ -12,14 +14,14 @@ public class ArrayDemo{
 
   //0. Include your prior methods to help you print a 1D/2D array of ints.
   public static String arrToString(int[]ary){
-    String result = "{";
+    String result = "[";
     if (ary.length != 0){
         for (int i = 0; i < ary.length; i++){
             result += ary[i] + ", ";
         }
         result = result.substring(0, result.length() - 2);
     }
-    result += "}";
+    result += "]";
     return result;
   }
 
