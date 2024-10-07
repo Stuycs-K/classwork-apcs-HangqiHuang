@@ -6,6 +6,11 @@ public class ArrayDemo{
     System.out.println(Arrays.toString(array1));
     System.out.println("Testing arrToString with Array.toString: " + arrToString(array1).equals(Arrays.toString(array1)));
     System.out.println("Testing 2DarrToStrign with Array.toString: " + arrToString(array1).equals(Arrays.toString(array1)));
+    int[][] array2 = {{0, 1}, {1, 0, 2}, {2, 0}};
+    int[][] array3 = {{1}, {1}, {1}, {1}, {1}};
+    System.out.println("Testing countZeros2D");
+    System.out.println(countZeros2D(array2) == 3);
+    System.out.println(countZeros2D(array3) == 0);
     //write your tests here!
     //You can now use Arrays.toString(yourArray) instead of writing arrayToString again.
     //Compare Arrays.toString(yourArray) to YOUR arrayToString() method to make sure yours is correct
