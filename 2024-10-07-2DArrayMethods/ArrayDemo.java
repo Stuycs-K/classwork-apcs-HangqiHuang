@@ -131,7 +131,13 @@ public class ArrayDemo{
   //   You may assume the array is rectangular and neither rows nor cols is 0.
   //   e.g. swapRC({{1,2,3},{4,5,6}}) returns {{1,4},{2,5},{3,6}}
   public static int[][] swapRC(int[][]nums){
-    return new int[1][1];
+    int[][] swap = new int[nums.length][nums[0].length];
+    for(int row = 0; row < nums.length; row++){
+      for(int column = 0; column < nums[0].length; column++){
+        swap[column][row] = nums[row][column];
+      }
+    }
+    return swap;
   }
 
   //6. Make an HTML table by putting a table tag around the entire 2d array,
