@@ -16,6 +16,7 @@ public class ArrayDemo{
     System.out.println("Testing replaceNegative");
     replaceNegative(array4);
     System.out.println("[[1], [2], [0], [0], [2], [2]]".equals(arrToString(array4)));//Array.toString only works with 1D arrays
+    int[][] array5 = 
     //write your tests here!
     //You can now use Arrays.toString(yourArray) instead of writing arrayToString again.
     //Compare Arrays.toString(yourArray) to YOUR arrayToString() method to make sure yours is correct
@@ -107,11 +108,15 @@ public class ArrayDemo{
   public static int[][] copy(int[][] nums){
     int[][] copy = new int[nums.length][];
     for(int i = 0; i < nums.length; i++){
-      int[] temp = new int[nums[i].length];
-      for(int j = 0; j < nums.length; j++){
-        temp[i] = nums[i][j];
-      }
-      copy[i] = temp;
+      nums[i] = copy(nums[i]);
+    }
+    return copy;
+  }
+
+  public static int[] copy(int[] nums){
+    int[] copy = new int[nums.length];
+    for(int i = 0; i < nums.length; i++){
+      copy[i] = nums[i];
     }
     return copy;
   }
