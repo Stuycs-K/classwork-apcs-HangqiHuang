@@ -3,26 +3,29 @@ public class ArrayDemo{
   public static void main(String[]args){
     int[] array1 = {1, 2, 3, 4, 5};
     System.out.println("Testing arrToString with Array.toString: " + arrToString(array1).equals(Arrays.toString(array1)));
+    System.out.println("Testing countZeros2D");
     int[][] array2 = {{0, 1}, {1, 0, 2}, {2, 0}};
     int[][] array3 = {{1}, {1}, {1}, {1}, {1}};
-    System.out.println("Testing countZeros2D");
     System.out.println(countZeros2D(array2) == 3);
     System.out.println(countZeros2D(array3) == 0);
-    int[][] array4 = {{-2}, {2}, {-2}, {-2}, {2}, {2}};
     System.out.println("Testing sum");
+    int[][] array4 = {{-2}, {2}, {-2}, {-2}, {2}, {2}};
     System.out.println(arr2DSum(array2) == 6);
     System.out.println(arr2DSum(array3) == 5);
     System.out.println(arr2DSum(array4) == 0);
     System.out.println("Testing replaceNegative");
     replaceNegative(array4);
     System.out.println("[[1], [2], [0], [0], [2], [2]]".equals(arrToString(array4)));//Array.toString only works with 1D arrays
+    System.out.println("Testing copy");
     int[][] array5 = {{0, 1, 2, 3, 4, 5}, {2}, {-5, 4, 9}, {0}};
     System.out.println(arrToString(copy(array5)));
     int[][] array6 = copy(array5);
     boolean notSameArray = array5 == array6;
     array6[1][0] = 0;
-    System.out.println("Testing copy");
     System.out.println(!notSameArray && !(arrToString(array5).equals(arrToString(array6))));
+    System.out.println("Testing swap");
+    int[][] array7 = {{0, 1}, {5, 4}, {6, 0}};
+    System.out.println(arrToString(swapRC(array7)).equals("[[0, 5, 6], [1, 4, 0]]"));
     //write your tests here!
     //You can now use Arrays.toString(yourArray) instead of writing arrayToString again.
     //Compare Arrays.toString(yourArray) to YOUR arrayToString() method to make sure yours is correct
@@ -131,7 +134,7 @@ public class ArrayDemo{
   //   You may assume the array is rectangular and neither rows nor cols is 0.
   //   e.g. swapRC({{1,2,3},{4,5,6}}) returns {{1,4},{2,5},{3,6}}
   public static int[][] swapRC(int[][]nums){
-    int[][] swap = new int[nums.length][nums[0].length];
+    int[][] swap = new int[nums[0].length][nums.length];
     for(int row = 0; row < nums.length; row++){
       for(int column = 0; column < nums[0].length; column++){
         swap[column][row] = nums[row][column];
