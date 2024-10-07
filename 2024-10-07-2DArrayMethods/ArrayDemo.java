@@ -27,6 +27,9 @@ public class ArrayDemo{
     int[][] array7 = {{0, 1}, {5, 4}, {6, 0}};
     System.out.println(arrToString(swapRC(swapRC(array7))));
     System.out.println(arrToString(array7).equals(arrToString(swapRC(swapRC(array7)))));
+    System.out.println("Testing htmlTable");
+    System.out.println("<table><tr><td>1</td><td>2</td></tr><tr><td>3</td></tr></table>".equals(htmlTable(new int[][]{{1,2},{3}})));
+    System.out.println(htmlTable(array5));//manually check
     //write your tests here!
     //You can now use Arrays.toString(yourArray) instead of writing arrayToString again.
     //Compare Arrays.toString(yourArray) to YOUR arrayToString() method to make sure yours is correct
@@ -151,6 +154,14 @@ public class ArrayDemo{
   //   e.g. htmlTable(new int[][]{{1,2},{3}})  returns:
   // "<table><tr><td>1</td><td>2</td></tr><tr><td>3</td></tr></table>"
   public static String htmlTable(int[][]nums){
-    return "";
+    String result = "<table>";
+    for(int row = 0; row < nums.length; row++){
+      result += "<tr>";
+      for(int column = 0; column < nums[row].length; column++){
+        result += "<td>" + nums[row][column] + "</td>";
+      }
+      result += "</tr>";
+    }
+    return result += "</table>";
   }
 }
