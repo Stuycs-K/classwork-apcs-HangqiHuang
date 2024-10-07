@@ -3,15 +3,19 @@ public class ArrayDemo{
   public static void main(String[]args){
     int[] array1 = {1, 2, 3, 4, 5};
     System.out.println("Testing arrToString with Array.toString: " + arrToString(array1).equals(Arrays.toString(array1)));
-    System.out.println("Testing 2DarrToStrign with Array.toString: " + arrToString(array1).equals(Arrays.toString(array1)));
     int[][] array2 = {{0, 1}, {1, 0, 2}, {2, 0}};
     int[][] array3 = {{1}, {1}, {1}, {1}, {1}};
     System.out.println("Testing countZeros2D");
     System.out.println(countZeros2D(array2) == 3);
     System.out.println(countZeros2D(array3) == 0);
+    int[][] array4 = {{-2}, {2}, {-2}, {-2}, {2}, {2}};
     System.out.println("Testing sum");
     System.out.println(arr2DSum(array2) == 6);
     System.out.println(arr2DSum(array3) == 5);
+    System.out.println(arr2DSum(array4) == 0);
+    System.out.println("Testing replaceNegative");
+    replaceNegative(array4);
+    System.out.println("[[1], [2], [0], [0], [2], [2]]".equals(arrToString(array4)));//Array.toString only works with 1D arrays
     //write your tests here!
     //You can now use Arrays.toString(yourArray) instead of writing arrayToString again.
     //Compare Arrays.toString(yourArray) to YOUR arrayToString() method to make sure yours is correct
@@ -101,7 +105,15 @@ public class ArrayDemo{
   //You SHOULD write a helper method for this.
   //If you don't see a good way to do that, you should stop and look at prior methods.
   public static int[][] copy(int[][] nums){
-    return new int[1][1];
+    int[][] copy = new int[nums.length][];
+    for(int i = 0; i < nums.length; i++){
+      int[] temp = new int[nums[i].length];
+      for(int j = 0; j < nums.length; j++){
+        temp[i] = nums[i][j];
+      }
+      copy[i] = temp;
+    }
+    return copy;
   }
 
   //5. Rotate an array by returning a new array with the rows and columns swapped.
