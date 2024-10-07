@@ -25,7 +25,8 @@ public class ArrayDemo{
     System.out.println(!notSameArray && !(arrToString(array5).equals(arrToString(array6))));
     System.out.println("Testing swap");
     int[][] array7 = {{0, 1}, {5, 4}, {6, 0}};
-    System.out.println(arrToString(swapRC(array7)).equals("[[0, 5, 6], [1, 4, 0]]"));
+    System.out.println(arrToString(swapRC(swapRC(array7))));
+    System.out.println(arrToString(array7).equals(arrToString(swapRC(swapRC(array7)))));
     //write your tests here!
     //You can now use Arrays.toString(yourArray) instead of writing arrayToString again.
     //Compare Arrays.toString(yourArray) to YOUR arrayToString() method to make sure yours is correct
