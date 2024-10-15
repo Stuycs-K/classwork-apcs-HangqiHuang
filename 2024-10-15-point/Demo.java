@@ -34,5 +34,12 @@ public class Demo{
     System.out.println( distance(p4,p3));
     System.out.println( Point.distance(p4,p3));
     System.out.println( p4.distanceTo(p3));
+
+    Point equilateralPoint1 = new Point(0, 0);
+    Point equilateralPoint2 = new Point(0, 1);
+    Point equilateralPoint3 = new Point(Math.sqrt(1 - Math.pow(.5, 2)), .5);
+    System.out.println(distance(equilateralPoint1, equilateralPoint2));
+    System.out.println(distance(equilateralPoint2, equilateralPoint3));
+    System.out.println(distance(equilateralPoint3, equilateralPoint1));
   }
 }
