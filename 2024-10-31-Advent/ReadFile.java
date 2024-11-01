@@ -20,13 +20,10 @@ public class ReadFile{
       Scanner input = new Scanner(file);
       int i = 0;
       while(input.hasNextLine()){
-        if(i % 2 == 0){
-          System.out.println(input.nextLine());
+        String currentLine = input.nextLine();
+        if(currentLine.indexOf('{') != -1){
+          System.out.println(currentLine);
         }
-        else{
-          input.nextLine();
-        }
-        i++;
       }
       input.close();
     }catch(FileNotFoundException e){
