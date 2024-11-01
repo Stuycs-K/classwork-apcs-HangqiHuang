@@ -1,17 +1,10 @@
 import java.util.Scanner;
 import java.io.File;
 import java.io.FileNotFoundException;
+
 public class TriangleTester{
   public static int countTriangle(String filename){
-    File file = new File(filename);
-    Scanner input = new Scanner(file);
-    int sum = 0;
-    while(input.hasNextLine()){
-      if(validTriangle(input.nextLine()) == true){
-        sum++;
-      }
-    }
-    return sum;
+    return 0;
   }
   public static boolean validTriangle(String sideLengths){
     Scanner sides = new Scanner(sideLengths);
@@ -21,6 +14,6 @@ public class TriangleTester{
     return (a + b > c && a + c > b && b + c > a);
   }
   public static void main(String[] args){
-
+    System.out.println(validTriangle("5 5 2"));
   }
 }
