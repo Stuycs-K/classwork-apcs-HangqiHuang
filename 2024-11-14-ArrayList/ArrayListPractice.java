@@ -17,9 +17,18 @@ public class ArrayListPractice{
   }
   public static void replaceEmpty( ArrayList<String> original){
     for(int i = 0; i < original.size(); i++){
-      if(original.get(i).equals("")){
-        original.set(i, "Empty");
+      if(original.get(i) != null){
+        if(original.get(i).equals("")){
+          original.set(i, "Empty");
+        }
       }
     }
-}
+  }
+  public static ArrayList<String> makeReversedList( ArrayList<String> original){
+    ArrayList<String> result = new ArrayList<String>(original.size());
+    for(int i = original.size() - 1; i >= 0; i--){
+      result.add(original.get(i));
+    }
+    return result;
+  }
 }
