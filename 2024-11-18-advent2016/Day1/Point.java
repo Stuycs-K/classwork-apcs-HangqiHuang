@@ -10,21 +10,27 @@ public class Point{
   }
 
   public void setDirection(String direction){
-    if(direction == "R"){
+    if(direction.equals("R")){
       this.direction -= 90;
     }
     else{
       this.direction += 90;
     }
+    if(this.direction < 0){
+      this.direction += 360;
+    }
+    if(this.direction == 360){
+      this.direction = 0;
+    }
   }
   public int getDirection(){
     return this.direction;
   }
-  public void setX(int x){
-    this.x = x;
+  public void changeX(int x){
+    this.x += x;
   }
-  public void setY(int y){
-    this.y = y;
+  public void changeY(int y){
+    this.y += y;
   }
   public int getX(){
     return this.x;
