@@ -2,7 +2,6 @@ import java.util.Random;
 public abstract class Adventurer{
   private String name;
   private int HP,maxHP;
-  private int actionSpeed;
 
 
   /*There is no no-arg constructor. Be careful with your subclass constructors.*/
@@ -15,7 +14,6 @@ public abstract class Adventurer{
       this.name = name;
       this.HP = hp;
       this.maxHP = hp;
-      this.actionSpeed = 10;
   }
 
   //concrete method written using abstract methods.
@@ -80,9 +78,6 @@ public abstract class Adventurer{
       return HP;
   }
 
-  public int getActionSpeed(){
-    return actionSpeed;
-  }
 
   public int getmaxHP(){
       return maxHP;
@@ -98,8 +93,5 @@ public abstract class Adventurer{
 
   public void setName(String s){
       this.name = s;
-  }
-  public void setActionSpeed(int targetActionSpeed){
-    this.actionSpeed = targetActionSpeed;
   }
 }
