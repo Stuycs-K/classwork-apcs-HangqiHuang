@@ -39,7 +39,6 @@ public class Scholar extends Adventurer{
     }
     other.applyDamage(10);
     return this.getName() + " hits " + other + " with his textbook, dealing 10 DMG.\n" + this.getName() + "'s HP: " + this.getHP() + "\n" + other + "'s HP: " + other.getHP() + "\n";
-    sleep(500);
   }
   public String support(Adventurer other){
     if(this.getBoss()){
@@ -103,13 +102,5 @@ public class Scholar extends Adventurer{
   //Set methods
   public void setEfficiency(boolean b){
     this.Efficiency = b;
-  }
-
-  //additional Methods
-  public static void sleep(int milli){
-    try{
-      Thread.sleep(milli);
-    }catch(Exception e){
-    }
   }
 }
