@@ -39,13 +39,21 @@ public class Scholar extends Adventurer{
     }
     other.applyDamage(10);
     return this.getName() + " hits " + other + " with his textbook, dealing 10 DMG.\n" + this.getName() + "'s HP: " + this.getHP() + "\n" + other + "'s HP: " + other.getHP() + "\n";
+    sleep(500);
   }
   public String support(Adventurer other){
     if(this.getBoss()){
       return "Support skill for others are not available for Bosses.\n";
     }
+    String target;
+    if(other.getName().equals(this.getName())){
+      target = "themself";
+    }
+    else{
+      target = other.getName();
+    }
     other.setHP(other.getHP() + 10);
-    return this.getName() + " healed " + other + " by 10 HP.\n" + other + "'s HP: " + other.getHP() + "\n";
+    return this.getName() + " healed " + target + " by 10 HP.\n" + other + "'s HP: " + other.getHP() + "\n";
   }
   public String support(){
     setEfficiency(true);
@@ -62,7 +70,7 @@ public class Scholar extends Adventurer{
         DMGDealt = 75;
       }
       other.applyDamage(DMGDealt);
-      return this.getName() + "drew a fire dragon on paper and used 50 Intelligence to transform it into reality. " + other + " took " + DMGDealt + " DMG from the dragon's fiery breathe.\n" + this.getName() + "'s HP: " + this.getHP() + "\n" +this.getName() + "'s Intelligence: " + this.getIntelligence() + "\n" + other + "'s HP: " + other.getHP();
+      return this.getName() + "drew a fire dragon on paper and used 50 Intelligence to transform it into reality. " + other + " took " + DMGDealt + " DMG from the dragon's fiery breathe.\n" + this.getName() + "'s HP: " + this.getHP() + "\n" +this.getName() + "'s Intelligence: " + this.getIntelligence() + "\n" + other + "'s HP: " + other.getHP() + "\n";
     }
     setSpecial(this.getSpecial() - 30);
     if(this.getEfficiency()){
@@ -95,5 +103,13 @@ public class Scholar extends Adventurer{
   //Set methods
   public void setEfficiency(boolean b){
     this.Efficiency = b;
+  }
+
+  //additional Methods
+  public static void sleep(int milli){
+    try{
+      Thread.sleep(milli);
+    }catch(Exception e){
+    }
   }
 }
