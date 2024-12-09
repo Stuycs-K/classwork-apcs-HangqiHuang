@@ -48,7 +48,6 @@ public class Scholar extends Adventurer{
     if(other.getName().equals(this.getName())){
       target = "themself";
   }
-    }
     else{
       target = other.getName();
     }
