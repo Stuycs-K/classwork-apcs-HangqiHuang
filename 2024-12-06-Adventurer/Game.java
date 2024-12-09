@@ -12,6 +12,9 @@ public class Game{
     // String type = userInput.nextLine();
     // while(type.equals("CodeWarrior") || type.equals("Scholar"))
     String input = userInput.nextLine();
-    while()
+    while(player.getHP() > 0 && enemy.getHP() > 0){
+      if
+      }
+    }
   }
 }
