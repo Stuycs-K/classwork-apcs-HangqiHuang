@@ -47,6 +47,7 @@ public class Scholar extends Adventurer{
     String target;
     if(other.getName().equals(this.getName())){
       target = "themself";
+  }
     }
     else{
       target = other.getName();
