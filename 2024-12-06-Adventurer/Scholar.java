@@ -61,22 +61,18 @@ public class Scholar extends Adventurer{
   public String specialAttack(Adventurer other){
     int DMGDealt;
     if(this.getBoss()){
+      DMGDealt = 75;
       setSpecial(this.getSpecial() - 50);
       if(this.getEfficiency()){
-        DMGDealt = 150;
-      }
-      else{
-        DMGDealt = 75;
+        DMGDealt *= 2;
       }
       other.applyDamage(DMGDealt);
       return this.getName() + "drew a fire dragon on paper and used 50 Intelligence to transform it into reality. " + other + " took " + DMGDealt + " DMG from the dragon's fiery breathe.\n" + status(this) + "\n" + status(other) + "\n";
     }
     setSpecial(this.getSpecial() - 30);
+    DMGDealt = 25;
     if(this.getEfficiency()){
-      DMGDealt = 100;
-    }
-    else{
-      DMGDealt = 50;
+      DMGDealt *= 2;
     }
     other.applyDamage(DMGDealt);
     return this.getName() + " used 30 Intelligence to overloaded " + other + "'s brain with the ancient knowledge of mating pigs. " + other + " took " + DMGDealt + " damage.\n" + status(this) + "\n" + status(other) + "\n";

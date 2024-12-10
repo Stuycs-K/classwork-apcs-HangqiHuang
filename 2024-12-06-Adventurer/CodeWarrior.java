@@ -55,7 +55,7 @@ public class CodeWarrior extends Adventurer{
   public String specialAttack(Adventurer other){
     if(getSpecial() >= 8){
       setSpecial(getSpecial()-8);
-      int damage = (int)(Math.random()*50+Math.random()*50)+3;
+      int damage = (int)(Math.random()*25+Math.random()*25)+3;
       other.applyDamage(damage);
       return this + " used their "+preferredLanguage+
       " skills to hack the matrix. "+
