@@ -46,7 +46,7 @@ public class CodeWarrior extends Adventurer{
     other.applyDamage(damage);
     restoreSpecial(2);
     return this + " attacked "+ other + " and dealt "+ damage +
-    " points of damage. They then take a sip of their coffee.";
+    " points of damage. They then take a sip of their coffee.\n" + status(this) + "\n" + status(other) + "\n";
   }
 
   /*Deal 3-12 damage to opponent, only if caffeine is high enough.
@@ -59,7 +59,7 @@ public class CodeWarrior extends Adventurer{
       other.applyDamage(damage);
       return this + " used their "+preferredLanguage+
       " skills to hack the matrix. "+
-      " This glitched out "+other+" dealing "+ damage +" points of damage.";
+      " This glitched out "+other+" dealing "+ damage +" points of damage.\n" + status(this) + "\n" + status(other) + "\n";
     }else{
       return "Not enough caffeine to use the ultimate code. Instead "+attack(other);
     }
@@ -75,6 +75,6 @@ public class CodeWarrior extends Adventurer{
     int hp = 1;
     setHP(getHP()+hp);
     return this+" drinks a coffee to restores "+restoreSpecial(6)+" "
-    + getSpecialName()+ " and "+hp+" HP";
+    + getSpecialName()+ " and "+hp+" HP\n" + status(this) + "\n";
   }
 }

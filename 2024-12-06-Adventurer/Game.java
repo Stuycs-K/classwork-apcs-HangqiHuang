@@ -42,12 +42,12 @@ public class Game{
             System.out.println("\n" + Warrior1.specialAttack(player));
           }
         }
+      }
       else{
         System.out.println("Invalid input.\nType \"a\" to attack, \"sp\" to perform your special attack, \"su\" to support yourself, or \"quit\" to end the game.");
         }
-      }
-      input = userInput.nextLine();
-    }
+    input = userInput.nextLine();
+  }
     if(input.equals("quit")){
       System.out.println("You have quit the battle. Aura -1000");
     }
