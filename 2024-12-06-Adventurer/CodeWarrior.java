@@ -42,7 +42,7 @@ public class CodeWarrior extends Adventurer{
 
   /*Deal 1-6 damage to opponent, restores 2 caffeine*/
   public String attack(Adventurer other){
-    int damage = (int)(Math.random()*6)+1;
+    int damage = (int)(Math.random()*10)+1;
     other.applyDamage(damage);
     restoreSpecial(2);
     return this + " attacked "+ other + " and dealt "+ damage +
@@ -55,7 +55,7 @@ public class CodeWarrior extends Adventurer{
   public String specialAttack(Adventurer other){
     if(getSpecial() >= 8){
       setSpecial(getSpecial()-8);
-      int damage = (int)(Math.random()*5+Math.random()*5)+3;
+      int damage = (int)(Math.random()*50+Math.random()*50)+3;
       other.applyDamage(damage);
       return this + " used their "+preferredLanguage+
       " skills to hack the matrix. "+
