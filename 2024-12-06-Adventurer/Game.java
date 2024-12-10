@@ -13,19 +13,39 @@ public class Game{
     // while(type.equals("CodeWarrior") || type.equals("Scholar"))
     String input = userInput.nextLine();
     while((player.getHP() > 0 && Warrior1.getHP() > 0) && !(input.equals("quit"))){
-      if(input.equals("a")){
-        System.out.println("\n" + player.attack(Warrior1));
+      String[] inputChecker = {"a", "sp", "su"};
+      boolean validInput = false;
+      for(int i = 0; i < inputChecker.length && validInput == false; i++){
+        if(input.equals(inputChecker[i])){
+          validInput = true;
+        }
       }
-      else if(input.equals("sp")){
-        System.out.println("\n" + player.specialAttack(Warrior1));
-      }
-      else if(input.equals("su")){
-        System.out.println("\n" + player.support());
-      }
-      else if(!(input.equals("quit"))){
+      if(validInput){
+        if(input.equals("a")){
+          System.out.println("\n" + player.attack(Warrior1));
+        }
+        else if(input.equals("sp")){
+          System.out.println("\n" + player.specialAttack(Warrior1));
+        }
+        else if(input.equals("su")){
+          System.out.println("\n" + player.support());
+        }
+        if(Warrior1.getHP() > 0){
+          int Dice = (int) (Math.random() * 3);
+          if(Dice == 0){
+            System.out.println("\n" + Warrior1.attack(player));
+          }
+          if(Dice == 1){
+            System.out.println("\n" + Warrior1.support());
+          }
+          else{
+            System.out.println("\n" + Warrior1.specialAttack(player));
+          }
+        }
+      else{
         System.out.println("Invalid input.\nType \"a\" to attack, \"sp\" to perform your special attack, \"su\" to support yourself, or \"quit\" to end the game.");
+        }
       }
-      input = userInput.nextLine();
     }
     if(input.equals("quit")){
       System.out.println("You have quit the battle. Aura -1000");
