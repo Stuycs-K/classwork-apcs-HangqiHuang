@@ -94,4 +94,9 @@ public abstract class Adventurer{
   public void setName(String s){
       this.name = s;
   }
+
+  //additional Methods
+  public String status(Adventurer name){
+    return name + ": " + name.getHP() + "/" + name.getmaxHP() + " HP, "+ name.getSpecial() + "/" + name.getSpecialMax() + " " + name.getSpecialName();
+  }
 }

@@ -35,10 +35,10 @@ public class Scholar extends Adventurer{
   public String attack(Adventurer other){
     if(this.getBoss()){
       other.applyDamage(30);
-      return this.getName() + " released an avalanche of books on " + other + ", dealing 30 DMG.\n" + this.getName() + "'s HP: " + this.getHP() + "\n" + other + "'s HP: " + other.getHP() + "\n";
+      return this + " released an avalanche of books on " + other + ", dealing 30 DMG.\n" + status(this) + "\n" + status(other) + "\n";
     }
     other.applyDamage(10);
-    return this.getName() + " hits " + other + " with his textbook, dealing 10 DMG.\n" + this.getName() + "'s HP: " + this.getHP() + "\n" + other + "'s HP: " + other.getHP() + "\n";
+    return this.getName() + " hits " + other + " with his textbook, dealing 10 DMG.\n" + status(this) + "\n" + status(other) + "\n";
   }
   public String support(Adventurer other){
     if(this.getBoss()){
@@ -52,7 +52,7 @@ public class Scholar extends Adventurer{
       target = other.getName();
     }
     other.setHP(other.getHP() + 10);
-    return this.getName() + " healed " + target + " by 10 HP.\n" + other + "'s HP: " + other.getHP() + "\n";
+    return this.getName() + " healed " + target + " by 10 HP.\n" + status(other) + "\n";
   }
   public String support(){
     setEfficiency(true);
@@ -69,7 +69,7 @@ public class Scholar extends Adventurer{
         DMGDealt = 75;
       }
       other.applyDamage(DMGDealt);
-      return this.getName() + "drew a fire dragon on paper and used 50 Intelligence to transform it into reality. " + other + " took " + DMGDealt + " DMG from the dragon's fiery breathe.\n" + this.getName() + "'s HP: " + this.getHP() + "\n" +this.getName() + "'s Intelligence: " + this.getIntelligence() + "\n" + other + "'s HP: " + other.getHP() + "\n";
+      return this.getName() + "drew a fire dragon on paper and used 50 Intelligence to transform it into reality. " + other + " took " + DMGDealt + " DMG from the dragon's fiery breathe.\n" + status(this) + "\n" + status(other) + "\n";
     }
     setSpecial(this.getSpecial() - 30);
     if(this.getEfficiency()){
@@ -79,13 +79,10 @@ public class Scholar extends Adventurer{
       DMGDealt = 50;
     }
     other.applyDamage(DMGDealt);
-    return this.getName() + " used 30 Intelligence to overloaded " + other + "'s brain with the ancient knowledge of mating pigs. " + other + " took " + DMGDealt + " damage.\n" + this.getName() + "'s HP: " + this.getHP() + "\n" + this.getName() + "'s Intelligence: " + this.getIntelligence() + "\n" + other + "'s HP: " + other.getHP() + "\n";
+    return this.getName() + " used 30 Intelligence to overloaded " + other + "'s brain with the ancient knowledge of mating pigs. " + other + " took " + DMGDealt + " damage.\n" + status(this) + "\n" + status(other) + "\n";
   }
 
   //Get methods
-  public int getIntelligence(){
-    return Intelligence;
-  }
   public boolean getEfficiency(){
     return Efficiency;
   }
@@ -99,8 +96,8 @@ public class Scholar extends Adventurer{
     }
     return super.getName();
   }
-  //Set methods
+  //Modifier methods
   public void setEfficiency(boolean b){
-    this.Efficiency = b;
+    Efficiency = b;
   }
 }
