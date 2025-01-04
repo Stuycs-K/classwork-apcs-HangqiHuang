@@ -142,8 +142,8 @@ public class MakeWord{
   }
 
   public static void main(String[] args){
-    // makeWords(3, "", "ABCDEFGHIJKLMNOPQRSTUVWXYZ");
-    for(int i = 0; i < 1000000; i++){
+    makeWords(3, "", "abc");
+    for(int i = 0; i < 100; i++){
       System.out.println(toWords(i));
     }
   }
