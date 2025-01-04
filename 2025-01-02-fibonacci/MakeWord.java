@@ -126,12 +126,24 @@ public class MakeWord{
       }
       return toWords(next);
     }
+    else if(length == 3){
+      if(n % 100 == 0){
+        return toWords(n / 100) + " hundred";
+      }
+      return toWords(n / 100) + " hundred and " + toWords(n - (int) (current * Math.pow(10, length - 1)));
+    }
+    else if(length > 3 && length < 7){
+      if(n % 1000 == 0){
+        return toWords(n / 1000) + " thousand";
+      }
+      return toWords(n / 1000) + " thousand and " + toWords(n - ((n / 1000) * 1000));
+    }
     return "";
   }
 
   public static void main(String[] args){
     // makeWords(3, "", "ABCDEFGHIJKLMNOPQRSTUVWXYZ");
-    for(int i = 0; i < 100; i++){
+    for(int i = 0; i < 1000000; i++){
       System.out.println(toWords(i));
     }
   }
